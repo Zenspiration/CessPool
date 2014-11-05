@@ -25,4 +25,12 @@ public class Member {
 	protected void addGoal(Goal newGoal){
 		this.goals.add(newGoal);
 	}
+	
+	protected void removeDoneGoals(){
+		for (Goal g : goals){
+			if (g.done == true){
+				goals.remove(g);
+			}
+		}
+	}
 }
