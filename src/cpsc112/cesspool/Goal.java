@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
 public class Goal {
 	//declare fields
 	protected String name, details;
-	protected double value;
+	protected int value;
 	protected Calendar dateDue;
 	protected DateFormat dateFormat;
 	protected boolean done;
