@@ -40,7 +40,7 @@ public class Goal {
 		
 	}
 	
-	private void printGoal(){
+	public void printGoal(){
 		System.out.println("Name: " + getName());
 		System.out.println("Due: " + getDateDue());
 		System.out.println("Details: " + getDetails());
@@ -48,27 +48,27 @@ public class Goal {
 	}
 	
 	//gets name of goal
-	private String getName(){
+	public String getName(){
 		return name;
 	}
 	
 	
 	//sets name of goal
-	private void setName(String name){
+	public void setName(String name){
 		this.name = name;
 	}
 	
 	//gets details of goal
-	private String getDetails(){
+	public String getDetails(){
 		return details;
 	}
 	
 	//sets details of goal
-	private void setDetails(String details){
+	public void setDetails(String details){
 		this.details = details;
 	}
 	
-	private String getDateDue(){
+	public String getDateDue(){
 		return dateFormat.format(dateDue.getTime());
 	}
 }
