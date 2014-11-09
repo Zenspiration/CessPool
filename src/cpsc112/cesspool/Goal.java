@@ -8,36 +8,29 @@ import java.util.GregorianCalendar;
 public class Goal {
 	//declare fields
 	protected String name, details;
-	protected int value;
+	protected int value; //in cents
 	protected Calendar dateDue;
 	protected DateFormat dateFormat;
-	protected boolean done;
+	protected boolean done; //true when marked done
 	
-	//constructor for class 'Goal'
-	public Goal(String name){
+	//create a new goal
+	public Goal(String name, String details){ //pass null if no details
 		setName(name);
-		setDetails(null);
+		setDetails(details);
+		done = false;
 		//Gets date goal was created and sets due date to end of that day
 		dateFormat = new SimpleDateFormat("MMM-dd-yyyy");
 		dateDue = new GregorianCalendar();
+		
+		//sets due time to 11:59
 //		dateDue.set(Calendar.HOUR_OF_DAY, 23);
 //		dateDue.set(Calendar.MINUTE, 59);
 		
+		this.value = 50; //add code to calculate goal value based on cycle length, cycle value, and number of goals for the day
 	}
 	
-	//alternate constructor if details are provided
-	public Goal(String name, String details){
-		this(name);
-		setDetails(details);
-	}
-	
-	public static void main(String[] args){
-		Goal g1 = new Goal("New Goal", "just a random goal");
-		g1.printGoal();
-		
-		Goal g2 = new Goal("New Goal, no description");
-		g2.printGoal();
-		
+	public Goal(String goalID){
+		//add code to get existing goal info from database through goal ID
 	}
 	
 	public void printGoal(){
@@ -68,6 +61,7 @@ public class Goal {
 		this.details = details;
 	}
 	
+	//returns due date in string format
 	public String getDateDue(){
 		return dateFormat.format(dateDue.getTime());
 	}
