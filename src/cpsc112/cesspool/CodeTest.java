@@ -31,7 +31,6 @@ public class CodeTest {
 					System.out.println("This person is not a member of your cesspool");
 				}
 			}
-			
 		
 		} while (!command.equals("exit"));
 	}
